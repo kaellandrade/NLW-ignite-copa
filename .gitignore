@@ -103,3 +103,6 @@ dist
 # TernJS port file
 .tern-port
 /server/db/
+/mobile/.expo/
+/mobile/.expo-shared/
+/mobile/node_modules/
