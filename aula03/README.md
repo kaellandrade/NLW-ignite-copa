@@ -6,3 +6,4 @@
 ## OAuth2   
 - [Whimsical](https://whimsical.com/)
 - [Expo](https://docs.expo.dev/guides/authentication/#google)
+- AuthSessions
