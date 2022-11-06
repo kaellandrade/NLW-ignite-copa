@@ -2,7 +2,7 @@ import {createContext, ReactNode, useEffect, useState} from "react";
 import * as Google from 'expo-auth-session/providers/google';
 import * as AuthSession from 'expo-auth-session';
 import * as WebBrowser from "expo-web-browser";
-
+import {api} from '../src/services/api'
 WebBrowser.maybeCompleteAuthSession();
 
 interface UserProps {
@@ -13,7 +13,7 @@ interface UserProps {
 export interface AuthContextDataProps {
 	user: UserProps;
 	signIn: () => Promise<void>;
-	isUserLoding:boolean
+	isUserLoding: boolean
 }
 
 interface AuthProviderProps {
@@ -28,27 +28,27 @@ export const AuthContext = createContext({} as AuthContextDataProps);
  * @constructor
  */
 export function AuthContextProvider({children}: AuthProviderProps) {
-	const [user,setUser ] = useState<UserProps>({} as UserProps);
-	const [isUserLoding,setUserLoading ] = useState(false);
+	const [user, setUser] = useState<UserProps>({} as UserProps);
+	const [isUserLoding, setUserLoading] = useState(false);
 	const [resquest, response, proptAsync] = Google.useAuthRequest({
-		clientId:"329365535884-d8l09p6jsli56m7h88sf0dnncqh18jne.apps.googleusercontent.com",
-		redirectUri:AuthSession.makeRedirectUri({useProxy: true}),
+		clientId: "329365535884-d8l09p6jsli56m7h88sf0dnncqh18jne.apps.googleusercontent.com",
+		redirectUri: AuthSession.makeRedirectUri({useProxy: true}),
 		scopes: ['profile', 'email']
 	});
-	useEffect(()=>{
-		if(response?.type === 'success' && response.authentication.accessToken){
+	useEffect(() => {
+		if (response?.type === 'success' && response.authentication.accessToken) {
 			signInWithGoogle(response.authentication.accessToken);
 		}
-	},[response])
+	}, [response])
 
 	async function signIn() {
-		try{
+		try {
 			setUserLoading(true);
 			await proptAsync();
-		}catch (error){
+		} catch (error) {
 			console.log(error);
 			throw error;
-		}finally {
+		} finally {
 			setUserLoading(false);
 		}
 	}
@@ -57,8 +57,21 @@ export function AuthContextProvider({children}: AuthProviderProps) {
 	 * Autenticação com Google
 	 * @param access_token
 	 */
-	async function signInWithGoogle(access_token:string){
-		console.log(access_token);
+	async function signInWithGoogle(access_token: string) {
+		try {
+			setUserLoading(true);
+			const tokenResponse = await api.post('/users', {access_token});
+			api.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse.data.token}`;
+
+			const userInfoResponse = await api.get('/me');
+			setUser(userInfoResponse.data);
+
+		} catch (error) {
+			console.log(error);
+			throw error;
+		} finally {
+			setUserLoading(false);
+		}
 	}
 
 	return (
