@@ -117,7 +117,7 @@ export async function pollRoutes(fastify: FastifyInstance) {
 	 * Rota para listar todos os bolões.
 	 */
 	fastify.get('/pools', {onRequest: [authenticate]}, async (request) => {
-		const polls = await prisma.pool.findMany({
+		const pools = await prisma.pool.findMany({
 			where: {
 				participants: {
 					some: {userId: request.user.sub}
@@ -148,7 +148,7 @@ export async function pollRoutes(fastify: FastifyInstance) {
 				}
 			}
 		});
-		return {polls}
+		return {pools}
 	});
 
 	fastify.get('/pools/:id', {
