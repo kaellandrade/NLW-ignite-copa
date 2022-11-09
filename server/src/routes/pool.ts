@@ -103,7 +103,6 @@ export async function pollRoutes(fastify: FastifyInstance) {
 			});
 		}
 
-		console.log(request.user.sub)
 		await prisma.participant.create({
 			data: {
 				poolId: pool.id,
