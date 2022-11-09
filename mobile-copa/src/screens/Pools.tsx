@@ -4,11 +4,11 @@ import {Header} from "../components/Header";
 import {Octicons} from '@expo/vector-icons';
 import {useNavigation} from "@react-navigation/native";
 import {api} from "../services/api";
-import {useEffect, useState} from "react";
+import {useCallback, useState} from "react";
 import {PoolCard, PoolCardProps} from "../components/PoolCard";
 import {Loading} from "../components/Loading";
-import {EmptyMyPoolList} from "../components/EmptyMyPoolList";
 import {EmptyPoolList} from "../components/EmptyPoolList";
+import {useFocusEffect} from '@react-navigation/native';
 
 /**
  * Lista todos os bolões criados.
@@ -19,9 +19,9 @@ export function Pools() {
 	const [pools, setPools] = useState<PoolCardProps[]>([]);
 	const {navigate} = useNavigation();
 	const [isLoading, setIsLoading] = useState(false);
-	useEffect(() => {
+	useFocusEffect(useCallback(() => {
 		fetchPools();
-	}, []);
+	}, []));
 
 	/**
 	 * Recupera todos os bolões criados.
@@ -36,7 +36,7 @@ export function Pools() {
 				title: 'Não foi possível carregar os bolões! 😥',
 				placement: 'bottom',
 				bgColor: 'red.500'
-			})
+			});
 		} finally {
 			setIsLoading(false);
 		}
