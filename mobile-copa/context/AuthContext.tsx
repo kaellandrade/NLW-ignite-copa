@@ -3,6 +3,7 @@ import * as Google from 'expo-auth-session/providers/google';
 import * as AuthSession from 'expo-auth-session';
 import * as WebBrowser from "expo-web-browser";
 import {api} from '../src/services/api'
+import {useToast} from "native-base";
 WebBrowser.maybeCompleteAuthSession();
 
 interface UserProps {
@@ -28,6 +29,7 @@ export const AuthContext = createContext({} as AuthContextDataProps);
  * @constructor
  */
 export function AuthContextProvider({children}: AuthProviderProps) {
+	const toast = useToast();
 	const [user, setUser] = useState<UserProps>({} as UserProps);
 	const [isUserLoding, setUserLoading] = useState(false);
 	const [resquest, response, proptAsync] = Google.useAuthRequest({
@@ -46,8 +48,11 @@ export function AuthContextProvider({children}: AuthProviderProps) {
 			setUserLoading(true);
 			await proptAsync();
 		} catch (error) {
-			console.log(error);
-			throw error;
+			toast.show({
+				title:'Erro ao autenticar. Verifique sua conexão e tente novamente. 😥',
+				bgColor:'red.500',
+				placement:'bottom'
+			});
 		} finally {
 			setUserLoading(false);
 		}
@@ -67,8 +72,11 @@ export function AuthContextProvider({children}: AuthProviderProps) {
 			setUser(userInfoResponse.data);
 
 		} catch (error) {
-			console.log(error);
-			throw error;
+			toast.show({
+				title:'Erro ao autenticar. Verifique sua conexão e tente novamente. 😥',
+				bgColor:'red.500',
+				placement:'bottom'
+			});
 		} finally {
 			setUserLoading(false);
 		}
