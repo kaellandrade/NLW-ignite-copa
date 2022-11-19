@@ -25,7 +25,7 @@ export function New() {
 		}
 		try {
 			setIsLoading(true);
-			await api.post('/pools', {title})
+			await api.post('/pools', {title:title.toUpperCase()})
 			toast.show({
 				title:'Bolão criado com sucesso! ⚽',
 				bgColor:'green.500',
