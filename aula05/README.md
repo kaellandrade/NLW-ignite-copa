@@ -1,4 +1,4 @@
-# Finalizando o mobile
+# Aula 05 (FIM)
 ## Anotações
-- `useFocusEffect` com `useCallback`
-[//]: # (TODO: Aula 43:13)
+- `useFocusEffect` com `useCallback`;
+- [DayJS](https://day.js.org/);

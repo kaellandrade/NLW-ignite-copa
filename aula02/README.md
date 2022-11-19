@@ -1,4 +1,4 @@
-# Criando rotas e acesso
+# Aula 02
 ## Anotações
 - Utilizando seeds com Prisma
 - [Zod](https://github.com/colinhacks/zod)

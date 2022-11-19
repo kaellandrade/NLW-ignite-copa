@@ -1,4 +1,4 @@
-# Iniciando o projeto de ponta a ponta
+# Aula 01
 ## Anotações
 ### Back-end
 - `npx tsc --init` setup typescript
