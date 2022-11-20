@@ -3,8 +3,9 @@ import {X, Check} from 'phosphor-react-native';
 import {getName} from 'country-list';
 
 import {Team} from './Team';
-import dayjs from "dayjs";
-import ptBR from "dayjs/locale/pt-br";
+import moment from "moment";
+import 'moment/locale/pt-br';
+import 'moment-timezone';
 
 interface GuessProps {
 	id: string;
@@ -33,7 +34,9 @@ interface Props {
 export function Game({data, setFirstTeamPoints, setSecondTeamPoints, onGuessConfirm}: Props) {
 	const {colors, sizes} = useTheme();
 	const openedToGuess = !Boolean(data.guess);
-	const when = dayjs(data.date).locale(ptBR).format("DD [de] MMMM YYYY [às] HH:00[h] (dddd) 🕑");
+	const calendar = moment(data.date).calendar();
+
+	const when = moment(data.date).format(`DD [de] MMMM YYYY [às] HH:00[h] [(${calendar})] 🕑`);
 
 	return (
 		<VStack
