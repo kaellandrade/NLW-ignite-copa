@@ -85,7 +85,9 @@ export function Guesses({poolId, code}: Props) {
 	}
 	return (
 		<FlatList
+			contentContainerStyle={{paddingBottom:200}}
 			data={games}
+			marginBottom={400}
 			keyExtractor={(item) => item.id}
 			renderItem={({item}) =>
 				<Game
