@@ -15,7 +15,7 @@ export async function gameRoutes(fastify: FastifyInstance) {
 		const {id} = getPoolParams.parse(request.params);
 		const games = await prisma.game.findMany({
 			orderBy:{
-				date: 'desc'
+				date: 'asc'
 			},
 			include:{
 				guesses: {
