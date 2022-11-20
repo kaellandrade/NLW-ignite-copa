@@ -7,3 +7,5 @@
 3. Execute `npx prisma migrate dev` para rodar as migrations. _(Esse comando também já vai executar as seeds)_
 4. Execute `npm run dev` para iniciar o servidor.
 
+## DER (Diagrama relacional do banco)
+<img src="../prints/der/nlw-copa-der.svg" />
