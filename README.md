@@ -3,14 +3,44 @@
   <img alt="NLW Copa" src="web/src/assets/logo.svg" />
 </p>
 
-[**Sobre**](#-sobre) &nbsp;&nbsp;**|**&nbsp;&nbsp;
-[**Telas**](#-telas) &nbsp;&nbsp;**|**&nbsp;&nbsp;
+[**Sobre**](#projeto) &nbsp;&nbsp;**|**&nbsp;&nbsp;
+[**Tecnologias**](#-tecnologia) &nbsp;&nbsp;**|**&nbsp;&nbsp;
+[**Instalação e execução**](#-como-executar) &nbsp;&nbsp;**|**&nbsp;&nbsp;
+[**Progresso**](#progresso) &nbsp;&nbsp;**|**&nbsp;&nbsp;
+[**Telas**](#-resultado-telas) &nbsp;&nbsp;**|**&nbsp;&nbsp;
 [**Layout**](#-layout) &nbsp;&nbsp;**|**&nbsp;&nbsp;
-[**Tecnologias e ferramentas utilizadas**](#-tecnologias-e-ferramentas-utilizadas) &nbsp;&nbsp;**|**&nbsp;&nbsp;
-[**Instalação e execução**](#-instalação-e-execução) &nbsp;&nbsp;**|**&nbsp;&nbsp;
-[**Contato**](#-contato) &nbsp;&nbsp;**|**&nbsp;&nbsp;
-[**Licença**](#-licença)
+[**Licença**](#-license)
 </div>
+
+## Projeto
+Projeto dedicado para copa do mundo de 2022. O projeto é composto de três partes. [back-end](server), [front-end-web](web)
+e [front-end-mobile](mobile-copa). Aqui aprendi diversos conceitos interessantes tais como trabalhar um pouco com datas,
+autenticação com JWT e OAuth 2.0.
+
+Através do [front-end web](web) é possível criar bolão. Com o [front-end mobile](mobile-copa) é possível consultar os bolões existentes, criar novos bolões,
+registrar palpites e listar o rank. [Telas aqui](#-resultado-telas).
+
+## ✨ Tecnologia
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Fastify](https://www.fastify.io/)
+- [Prisma](https://www.prisma.io/)
+- [Docker 🐳](https://www.docker.com/)
+- [MySQL](https://www.mysql.com/)
+- [JWT](https://jwt.io/)
+
+## 🚀 Como executar
+
+Em todos os projetos, ao acessar a pasta, é preciso baixar os pacotes com o gerenciador de sua preferencia.
+
+Acesse a documentação de cada projeto:
+
+- [Backend](./server/README.md)
+- [Web](./web/README.md)
+- [Mobile](./mobile-copa/README.md)
 
 ## Progresso
 Duração do curso ≃  12H e 30 MIM 🕗
@@ -78,32 +108,6 @@ Duração do curso ≃  12H e 30 MIM 🕗
   <a href="LICENSE"><img  src="https://img.shields.io/static/v1?label=License&message=MIT&color=F7DD43&labelColor=202024" alt="License"></a>
 </p>
 <hr>
-
-## 💻 Projeto
-
-Aplicação para participar de bolões da Copa do Mundo 2022.
-
-## ✨ Tecnologia
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [React](https://reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
-- [Fastify](https://www.fastify.io/)
-- [Prisma](https://www.prisma.io/)
-- [Docker 🐳](https://www.docker.com/)
-- [MySQL](https://www.mysql.com/)
-- [JWT](https://jwt.io/)
-
-## 🚀 Como executar
-
-Em todos os projetos, ao acessar a pasta, é preciso baixar os pacotes com o gerenciador de sua preferencia.
-
-Acesse a documentação de cada projeto:
-
-- [Backend](./server/README.md)
-- [Web](./web/README.md)
-- [Mobile](./mobile-copa/README.md)
 
 ## 🔖 Layout
 
