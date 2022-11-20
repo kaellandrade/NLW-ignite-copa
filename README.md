@@ -20,6 +20,58 @@ Duração do curso ≃  12H e 30 MIM 🕗
 4. [X] [Aula 04](aula04)
 5. [X] [Aula 05](aula05)
 
+## 🖼 Resultado telas
+### 📱 Mobile 
+<table>
+  <tr>
+    <td>
+      <figure>
+        <img src="./prints/mobile/1_buscar_bolao.jpg" />
+        <figcaption>Buscar bolão</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="./prints/mobile/2_tela_criar_bolao.jpg" />
+        <figcaption>Criar bolão</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="./prints/mobile/3_jogos.jpg" />
+        <figcaption>Tela dos jogos</figcaption>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <figure>
+        <img src="./prints/mobile/4_login.jpg" />
+        <figcaption>Login com Google</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="./prints/mobile/5_splash.jpg" />
+        <figcaption>Splash</figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
+
+
+## 💻 Web
+<table>
+  <tr>
+    <td>
+      <figure>
+        <img src="prints/web/web.png" />
+        <figcaption>Tela web para cadastro de bolão</figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
+
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=NLW&message=10&color=F7DD43&labelColor=202024" alt="NLW 10 - Copa" />
