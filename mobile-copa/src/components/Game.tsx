@@ -36,7 +36,7 @@ export function Game({data, setFirstTeamPoints, setSecondTeamPoints, onGuessConf
 	const openedToGuess = !Boolean(data.guess);
 	const calendar = moment(data.date).calendar();
 
-	const when = moment(data.date).format(`DD [de] MMMM YYYY [às] HH:00[h] [(${calendar})] 🕑`);
+	const when = moment(data.date).format(`DD [de] MMMM YYYY [(${calendar})] 🕑`);
 
 	return (
 		<VStack
